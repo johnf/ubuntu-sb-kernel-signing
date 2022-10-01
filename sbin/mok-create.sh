@@ -15,10 +15,10 @@ echo "
 ## OpenSSL Create MOK Certificates
 "
 
-read -p "Provide path to MOK certificate store (default: /var/lib/shim-signed/mok): "
+read -p "Provide path to MOK certificate store (default: /var/lib/shim-signed/mok): " MOK_CERT_DIR
 MOK_CERT_DIR=${MOK_CERT_DIR:-"/var/lib/shim-signed/mok"}
 
-read -r -p "Provide the MOK certificate name, cannot be \"MOK\" (default: MOK-Kernel): "
+read -r -p "Provide the MOK certificate name, cannot be \"MOK\" (default: MOK-Kernel): " MOK_CERT_NAME
 MOK_CERT_NAME=${MOK_CERT_NAME:-"MOK-Kernel"}
 
 if [ $MOK_CERT_NAME == "MOK" ]; then
@@ -27,7 +27,7 @@ if [ $MOK_CERT_NAME == "MOK" ]; then
 fi
 
 if [ $CONFIGFILE == "" ]; then
-   read -p "Provide OpenSSL MOK config file path (default: /etc/ssl/openssl-mok.cnf): "
+   read -p "Provide OpenSSL MOK config file path (default: /etc/ssl/openssl-mok.cnf): " CONFIGFILE
    CONFIGFILE=${CONFIGFILE:-"/etc/ssl/openssl-mok.cnf"}
 fi
 
